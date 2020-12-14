@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Saratov JS Client</title>
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/1818/1818401.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../shared/normalize.css">
+    <link rel="stylesheet" href="../../shared/shared.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="message-group">
+            <label class="message">
+                Введите сообщение!
+                <input class="message-input" type="text" placeholder="Мама, мама я в телевизоре :D" />
+            </label>
+            <button class="send-button">Отправить</button>
+        </div>
+        <div class="answer-group hidden">
+            Сообщение успешно отправлено, смотрите эфир ヾ(^▽^*)))
+            <button class="backward-button">Отправить еще одно</button>
+        </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
