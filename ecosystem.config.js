@@ -1,14 +1,14 @@
 module.exports = {
   apps : [
       {
-        name: "si-game",
+        name: "obs-messages",
         script: "./server/index.js",
-        instances: 4,
+        instances: 1,
         exec_mode: "cluster",
         watch: true,
         increment_var : 'PORT',
         env: {
-            "PORT": 4000,
+            "PORT": 80,
             "NODE_ENV": "development"
         }
       }
