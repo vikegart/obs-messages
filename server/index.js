@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 
 const SECURE_URL = '/chto';
 const SHARED_URL = '/shared';
+const MODERATOR_URL = '/moder'
 
 app.use(cors());
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use('/', express.static('client/pages/playerPage'));
 app.use(SECURE_URL, express.static('client/pages/hostPage'));
 app.use(SHARED_URL, express.static('client/shared'));
+app.use(MODERATOR_URL, express.static('client/pages//moderatorPage'));
 
 io.on("connection", function(socket) {
   // console.log("user is connected");
@@ -23,7 +25,10 @@ io.on("connection", function(socket) {
   });
 
   socket.on("send", function(message) {
-    console.log(message);
+    io.emit("to_approve", message);
+  });
+
+  socket.on("approved", function(message) {
     io.emit("broadcast", message);
   });
 
